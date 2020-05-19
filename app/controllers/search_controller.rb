@@ -3,8 +3,9 @@ class SearchController < ApplicationController
   def index
     response = con.get('characters')
     json = JSON.parse(response.body, symbolize_names: true)
-    x = json.sort_by_ofp
-    binding.pry
+    @members = json.sort_by do |key, value|
+      key[:orderOfThePhoenix] = true
+    end
   end
 
   def con

@@ -1,0 +1,6 @@
+<% @members.each do |member| %>
+  <p>Name<%= member[:name] %></p>
+  <p>Role<%= member[:role] unless nil %></p>
+  <p>House<%= member[:house] unless nil %></p>
+  <p>Patronus<%= member[:patronus] unless nil %></p>
+<% end %>
